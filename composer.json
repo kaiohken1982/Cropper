@@ -1,0 +1,31 @@
+{
+    "name": "razor/cropper",
+    "description": "An image cropper service module for Zend Framework 2",
+    "type": "library",
+    "keywords": [
+        "zf2", "thumbnail", "watermark", "image", "crop"
+    ],
+    "homepage": "https://github.com/kaiohken1982/Cropper",
+    "authors": [
+        {
+            "name": "sergio Rinaudo",
+            "email": "sergio.rinaudo@gmail.com",
+            "homepage": "http://www.sergiorinaudo.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "ext-gd": "*",
+        "razor/thumbnailer" : "dev-master"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-0": {
+            "Cropper": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
