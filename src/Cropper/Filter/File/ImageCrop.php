@@ -73,10 +73,10 @@ class ImageCrop
         } else {
 	    	$basename = basename($image);
 	    	$dirname = dirname($image);
-	    	$image = $dirname . 'cropped_' . $basename;
+	    	$image = $dirname . DIRECTORY_SEPARATOR . 'cropped_' . $basename;
         	$cropper->save($image);
         }
         
-        return $image;
+        return array('name' => $image);
     }
 }
