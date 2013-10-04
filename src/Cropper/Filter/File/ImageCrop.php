@@ -61,11 +61,6 @@ class ImageCrop
         $cropper->setSquareMode(true); 
         $cropper->save($filtered);
         
-        if($isFile) {
-        	$value['tmp_name'] = $filtered;
-        	$filtered = $value;
-        }
-        
         return $filtered;
     }
 }
