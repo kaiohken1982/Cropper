@@ -77,6 +77,6 @@ class ImageCrop
         	$cropper->save($image);
         }
         
-        return array('name' => $image);
+        return $image;
     }
 }
