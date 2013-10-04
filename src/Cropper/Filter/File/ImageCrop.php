@@ -19,9 +19,9 @@ class ImageCrop
 	}
 	
 	/**
-	 * Get the thumbnailer given with the options
+	 * Set the thumbnailer given with the options
 	 * @throws \Exception
-	 * @return Thumbnailer\Thumbnailer\Thumbnailer
+	 * @return Cropper\Filter\File\ImageCrop
 	 */
     protected function setThumbnailer(Thumbnailer $thumbnailer)
     {
@@ -33,6 +33,10 @@ class ImageCrop
         return $this;
     }
     
+    /**
+     * Get thumbnailer service
+     * @return Thumbnailer\Thumbnailer\Thumbnailer;
+     */
     protected function getThumbnailer() 
     {
     	return $this->options['thumbnailer'];

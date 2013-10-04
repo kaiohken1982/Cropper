@@ -203,7 +203,7 @@ class Cropper
 			
 			$this->height = $this->getSquareMode() ? $this->width : $this->height;
 			$height = ($this->imageInfo['height'] - $this->height) / 2;
-			$height = $height < 0 ? 0 : $height;
+			//$height = $height < 0 ? 0 : $height;
 		default:
 			break;
 		}
@@ -220,7 +220,7 @@ class Cropper
         list($cropStartX, $cropStartY) = $this->calculateCropStartXY(); // Crop Start X & Y
 		
         /*
-        TODO: use imagecrop id available
+        TODO: use imagecrop php function if available
         $this->sourceImageResource = imagecrop($this->sourceImageResource , array(
         		$cropStartX,
         		$cropStartY,
