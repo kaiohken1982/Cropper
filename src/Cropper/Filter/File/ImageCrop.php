@@ -10,8 +10,7 @@ class ImageCrop
 	extends AbstractFilter
 {
 	protected $options = array(
-		'thumbnailer' => null,
-		'keepOriginal' => false
+		'thumbnailer' => null
 	);
 	
 	public function __construct($options)
@@ -43,11 +42,6 @@ class ImageCrop
     	return $this->options['thumbnailer'];
     }
     
-    protected function getKeepOriginal() 
-    {
-    	return $this->options['keepOriginal'];
-    }
-    
     /**
      * @param  string $value
      * @return string|mixed
@@ -56,27 +50,22 @@ class ImageCrop
     {
     	$isFile = false;
     	if(is_array($value) && isset($value['tmp_name'])) {
-    		$image = $value['tmp_name'];
+    		$filtered = $value['tmp_name'];
     		$isFile = true;
     	} else {
-    		$image = $value;
+    		$filtered = $value;
     	}
     	
-    	
-    	
     	$cropper = new Cropper($this->getThumbnailer());
-        $cropper->open($image);
+        $cropper->open($filtered);
         $cropper->setSquareMode(true); 
+        $cropper->save($filtered);
         
-        if(!$this->getKeepOriginal()) {
-        	$cropper->save($image);
-        } else {
-	    	$basename = basename($image);
-	    	$dirname = dirname($image);
-	    	$image = $dirname . DIRECTORY_SEPARATOR . 'cropped_' . $basename;
-        	$cropper->save($image);
+        if($isFile) {
+        	$value['tmp_name'] = $filtered;
+        	$filtered = $value;
         }
         
-        return $image;
+        return $filtered;
     }
 }
