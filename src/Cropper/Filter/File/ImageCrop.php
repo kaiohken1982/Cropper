@@ -10,7 +10,8 @@ class ImageCrop
 	extends AbstractFilter
 {
 	protected $options = array(
-		'thumbnailer' => null
+		'thumbnailer' => null,
+		'width' => 800
 	);
 	
 	public function __construct($options)
@@ -43,6 +44,15 @@ class ImageCrop
     }
     
     /**
+     * Get the width of the cropped image
+     * @return int
+     */
+    protected function getWidth() 
+    {
+    	return $this->options['width'];
+    }
+    
+    /**
      * @param  string $value
      * @return string|mixed
      */
@@ -58,6 +68,7 @@ class ImageCrop
     	
     	$cropper = new Cropper($this->getThumbnailer());
         $cropper->open($filtered);
+        $cropper->setSize($this->getWidth());
         $cropper->setSquareMode(true); 
         $cropper->save($filtered);
         
