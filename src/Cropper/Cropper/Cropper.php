@@ -171,8 +171,18 @@ class Cropper
 	 * (non-PHPdoc)
 	 * @see \Cropper\Cropper\CropperInterface::setSize()
 	 */
-	public function setSize($width, $height) 
+	public function setSize($width = null, $height = null) 
 	{
+		if(null === $height && null !== $width) {
+			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
+			$height = $width * $this->imageInfo['height'] / $this->imageInfo['width'];
+		}
+		
+		if(null === $width && null !== $height) {
+			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
+			$width = $height * $this->imageInfo['width'] / $this->imageInfo['height'];
+		}
+	
 		$this->width = $width;
 		$this->height = $height;
 		
