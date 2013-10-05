@@ -175,12 +175,12 @@ class Cropper
 	{
 		if(null === $height && null !== $width) {
 			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
-			$height = $width * $this->imageInfo['height'] / $this->imageInfo['width'];
+			$height = (int) ($width * $this->imageInfo['height'] / $this->imageInfo['width']);
 		}
 		
 		if(null === $width && null !== $height) {
 			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
-			$width = $height * $this->imageInfo['width'] / $this->imageInfo['height'];
+			$width = (int) ($height * $this->imageInfo['width'] / $this->imageInfo['height']);
 		}
 	
 		$this->width = $width;

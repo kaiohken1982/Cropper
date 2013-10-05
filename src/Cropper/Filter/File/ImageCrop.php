@@ -72,6 +72,6 @@ class ImageCrop
         $cropper->setSquareMode(true); 
         $cropper->save($filtered);
         
-        return $filtered;
+        return $value;
     }
 }
