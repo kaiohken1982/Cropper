@@ -174,11 +174,17 @@ class Cropper
 	public function setSize($width = null, $height = null) 
 	{
 		if(null === $height && null !== $width) {
+			if($width < $this->imageInfo['width']) {
+				$width = $this->imageInfo['width'];
+			}
 			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
 			$height = (int) ($width * $this->imageInfo['height'] / $this->imageInfo['width']);
 		}
 		
 		if(null === $width && null !== $height) {
+			if($height < $this->imageInfo['height']) {
+				$height = $this->imageInfo['height'];
+			}
 			// $width : $this->imageInfo['width'] = $height : $this->imageInfo['height']
 			$width = (int) ($height * $this->imageInfo['width'] / $this->imageInfo['height']);
 		}
