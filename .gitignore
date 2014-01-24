@@ -1,0 +1,15 @@
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+.settings
+coverage
+.buildpath
+.settings
+.project
+composer.phar
+._*
+.~lock.*
+.DS_Store
+.idea
