@@ -1,6 +1,14 @@
 Image Cropper Module
 ====================
 
+[![Build Status](https://travis-ci.org/kaiohken1982/Cropper.png?branch=master)](https://travis-ci.org/kaiohken1982/Cropper)
+[![Coverage Status](https://coveralls.io/repos/kaiohken1982/Cropper/badge.png?branch=master)](https://coveralls.io/r/kaiohken1982/Cropper?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/52f5629dec1375917400008a/badge.png)](https://www.versioneye.com/user/projects/52f5629dec1375917400008a)
+[![Latest Stable Version](https://poser.pugx.org/razor/cropper/v/stable.png)](https://packagist.org/packages/razor/cropper) 
+[![Total Downloads](https://poser.pugx.org/razor/cropper/downloads.png)](https://packagist.org/packages/razor/cropper) 
+[![Latest Unstable Version](https://poser.pugx.org/razor/cropper/v/unstable.png)](https://packagist.org/packages/razor/cropper) 
+[![License](https://poser.pugx.org/razor/cropper/license.png)](https://packagist.org/packages/razor/cropper)
+
 An image cropper service module for Zend Framework 2.
 
 
